@@ -1,18 +1,29 @@
-import { Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+import { Routes, Route, NavLink } from "react-router-dom";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
 
 const App = () => {
   return (
-    <div>
+    <>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="about">About</Link>
+            <NavLink
+              to="about"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              About
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -24,7 +35,7 @@ const App = () => {
         </Routes>
       </main>
       <footer>Footer</footer>
-    </div>
+    </>
   );
 };
 
